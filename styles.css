@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+}
+.scrollBar{
+    top: 130px;
+    position: fixed;
+    background-color: blue;
+    margin: 10px;
+    height: 400px;
+    width: 1px;
+}
+.scroll{
+    height: 30px;
+    width: 5px;
+    
+    background-color: black;
+    translate:  -2px;
+    z-index: 4;
+    
+}
+.sidebar{
+  padding-bottom: 10px;
+  height: inherit;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+}
+
+
+
+.section0,
+.section1,
+.section2,
+.section3,
+.section4 {
+  width: 100vw;
+  height: 1080px;
+}
+.section0 {
+  background-color: antiquewhite;
+}
+.section1 {
+  background-color: aqua;
+}
+.section2 {
+  background-color: aquamarine;
+}
+.section3 {
+  background-color: azure;
+}
