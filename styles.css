@@ -1,35 +1,35 @@
-body{
-    margin: 0;
-    padding: 0;
-    z-index: 0;
+* {
+  font-family: sans-serif;
+  --green: rgba(12, 131, 42, 0.863);
 }
-.scrollBar{
-    top: 130px;
-    position: fixed;
-    background-color: blue;
-    margin: 10px;
-    height: 400px;
-    width: 1px;
+body {
+  margin: 0;
+  padding: 0;
 }
-.scroll{
-    height: 30px;
-    width: 5px;
-    
-    background-color: black;
-    translate:  -2px;
-    z-index: 4;
-    
+.scrollBar {
+  top: 130px;
+  position: fixed;
+  background-color: blue;
+  margin: 10px;
+  height: 400px;
+  width: 1px;
 }
-.sidebar{
+.scroll {
+  height: 30px;
+  width: 5px;
+  background-color: black;
+  translate: -2px;
+  z-index: 4;
+}
+.sidebar {
+  translate: 5px;
   padding-bottom: 10px;
   height: inherit;
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content:space-between;
+  justify-content: space-between;
 }
-
-
 
 .section0,
 .section1,
@@ -39,9 +39,6 @@ body{
   width: 100vw;
   height: 1080px;
 }
-.section0 {
-  background-color: antiquewhite;
-}
 .section1 {
   background-color: aqua;
 }
@@ -50,4 +47,161 @@ body{
 }
 .section3 {
   background-color: azure;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100vw;
+  height: 50px;
+  z-index: 1;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255),
+    rgba(95, 153, 100, 0.938)
+  );
+}
+.hidden {
+  display: none;
+}
+.backdrop {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100vw;
+  background-color: rgba(197, 197, 197, 0.322);
+  backdrop-filter: blur(2px);
+  z-index: 3;
+}
+header div {
+  padding: 15px;
+}
+header div:hover {
+  color: rgb(0, 179, 0);
+  cursor: default;
+  translate: 0px -2px;
+  box-shadow: 0px 5px 3px green;
+}
+.headerFocus {
+  color: rgb(0, 179, 0);
+  cursor: default;
+  translate: 0px -2px;
+  box-shadow: 0px 5px 3px green;
+}
+.hire {
+  color: var(--green);
+  background-color: rgba(1, 77, 1, 0.123);
+  border: 1px solid var(--green);
+  padding: 3px 10px 5px 10px;
+  width: 58px;
+  margin: 10px;
+  border-radius: 15px;
+  white-space: nowrap;
+}
+.hire:hover {
+  background-color: rgba(2, 180, 2, 0.349);
+  color: white;
+  border: 1px solid rgba(0, 128, 0, 0.274);
+}
+.contact {
+  position: absolute;
+  top: 100px;
+  margin: auto;
+  background-color: white;
+  max-height: 400px;
+  min-height: 40%;
+  width: 300px;
+  left: 0;
+  right: 0;
+  box-shadow: 5px 5px 5px rgb(197, 197, 197);
+  z-index: 5;
+  padding-top: 80px;
+}
+.contactClose {
+  position: absolute;
+  border: 1px;
+  padding: 5px;
+  height: 25px;
+  width: 25px;
+  background-color: rgb(240, 239, 239);
+  border-radius: 15px;
+  right: 3px;
+  top: 3px;
+}
+.contactClose:hover,
+.email:hover {
+  background-color: rgb(216, 216, 216);
+}
+.contactInfo,
+.email {
+  display: block;
+  margin: auto;
+  margin-bottom: 50px;
+  padding: 5px;
+  width: 77%;
+  text-align: center;
+  border-radius: 20px;
+  border: 1px solid var(--green);
+}
+.contactInfo:hover {
+  box-shadow: 3px 3px 5px rgba(128, 128, 128, 0.295);
+  translate: -2px -2px;
+}
+.email {
+  background-image: linear-gradient(
+    to bottom right,
+    white,
+    rgba(2, 131, 2, 0.486)
+  );
+  box-shadow: none;
+  text-decoration: none;
+  color: black;
+  border: 0px;
+}
+.email:hover {
+  color: white;
+}
+.details {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  justify-content: space-between;
+  width: 75vw;
+  padding-top: 150px;
+  margin: auto;
+  transform-style: preserve-3d;
+}
+.whoami {
+  text-align: center;
+  margin-top: 130px;
+  height: max-content;
+  padding: 2px;
+  width: 170px;
+  background-color: rgba(0, 128, 0, 0.603);
+  clip-path: polygon(5% 100%, 85% 100%, 95% 0, 15% 0);
+  color: white;
+  translate: -70px 50px;
+}
+.description {
+  grid-row-start: 2;
+}
+.laptopS {
+  width: 400px;
+  translate: 0px 70px;
+  z-index: 0;
+}
+.aloveraS {
+  width: 300px;
+  translate: 10px;
+  opacity: 0.8;
+  z-index: 2;
+}
+.pencilS {
+  position: absolute;
+  height: 300px;
+  opacity: 0.5;
+  z-index: 1;
+  translate: -20px -5px;
 }
