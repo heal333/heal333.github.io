@@ -6,24 +6,34 @@ body {
   margin: 0;
   padding: 0;
 }
+.background{
+  position: fixed;
+  height: 1080px;
+  width: 100vw;
+  z-index: -1;
+  object-fit: cover;
+  /* filter: blur(5px); */
+}
 .scrollBar {
-  top: 130px;
+  top: 50%;
   position: fixed;
   background-color: blue;
   margin: 10px;
-  height: 400px;
+  height: 200px;
   width: 1px;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
-.scroll {
+/* .scroll {
   height: 30px;
   width: 5px;
   background-color: black;
   translate: -2px;
   z-index: 4;
-}
+} */
 .sidebar {
   translate: 5px;
-  padding-bottom: 10px;
+  /* padding:10px 0px 10px 0px; */
   height: inherit;
   position: absolute;
   display: flex;
@@ -39,11 +49,11 @@ body {
   width: 100vw;
   height: 1080px;
 }
-.section1 {
-  background-color: aqua;
-}
 .section2 {
   background-color: aquamarine;
+}
+.section1{
+  background-color: aqua;
 }
 .section3 {
   background-color: azure;
@@ -78,18 +88,45 @@ header {
 header div {
   padding: 15px;
 }
-header div:hover {
-  color: rgb(0, 179, 0);
-  cursor: default;
-  translate: 0px -2px;
-  box-shadow: 0px 5px 3px green;
-}
+header div:hover,
 .headerFocus {
   color: rgb(0, 179, 0);
   cursor: default;
+  border: none;
+  translate: 0px -2px;
+  box-shadow: 5px 5px 5px green;
+  transition: ease-out 0.1s;
+}
+/* .headerFocus {
+  color: rgb(0, 179, 0);
+  cursor: default;
   translate: 0px -2px;
   box-shadow: 0px 5px 3px green;
+} */
+.sideFocus {
+  color: green;
+  animation: hover 0.1s;
+  animation-fill-mode: forwards;
 }
+.sidebar div:hover {
+  color: green;
+  font-size: 20px;
+  transition: 0.1s;
+}
+/* .sidebar div{
+  color:green;
+  animation: hover .3s;
+  animation-fill-mode: backwards;
+} */
+@keyframes hover {
+  0% {
+    font-size: medium;
+  }
+  100% {
+    font-size: 40px;
+  }
+}
+
 .hire {
   color: var(--green);
   background-color: rgba(1, 77, 1, 0.123);
@@ -177,12 +214,13 @@ header div:hover {
   text-align: center;
   margin-top: 130px;
   height: max-content;
-  padding: 2px;
-  width: 170px;
+  padding: 10px;
+  width: 200px;
   background-color: rgba(0, 128, 0, 0.603);
   clip-path: polygon(5% 100%, 85% 100%, 95% 0, 15% 0);
   color: white;
   translate: -70px 50px;
+  font-size: 30px;
 }
 .description {
   grid-row-start: 2;
@@ -204,4 +242,29 @@ header div:hover {
   opacity: 0.5;
   z-index: 1;
   translate: -20px -5px;
+}
+
+/* proj */
+.projectPlane {
+  margin: auto;
+  width: 1000px;
+  display: grid;
+  grid-template-columns: auto auto;
+  height: 1080px;
+
+  /* overflow: scroll; */
+}
+.projectPlane div {
+  z-index: 3;
+}
+.projectPlane img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.evenDiv, .evenImg {
+  translate: 50px;
+}
+.oddDiv, .oddImg {
+  translate: -50px;
 }

@@ -3,6 +3,11 @@
 const scroll = document.querySelector(".scroll");
 const section3 = document.querySelector(".section3");
 const sidebar = document.querySelector(".sidebar");
+const side0 = document.querySelector(".side0");
+const side1 = document.querySelector(".side1");
+const side2 = document.querySelector(".side2");
+const side3 = document.querySelector(".side3");
+const side4 = document.querySelector(".side4");
 // let viewHeight = window.innerHeight * 0.4;
 let scrollPosition = 0;
 const headerDetails = document.querySelector(".headerDetails");
@@ -21,26 +26,35 @@ const header = document.querySelector("header");
 // });
 
 //to render the sidebar according to the scroll position
-
 const headerList = [headerDetails, headerProj, headerEdu, headerContact];
+const sideList = [side0,side1,side2,side3,side4]
 function scrollEffect(location) {
   headerList.forEach((elem) => {
     elem.classList.remove("headerFocus");
   });
+  sideList.forEach((elem)=>{
+    elem.classList.remove("sideFocus")
+  })
   scrollPosition = location / 11.5; //(window.scrollY / 3500) * 400;
-  scroll.style.translate = `-2px ${scrollPosition}px`;
-  location <= 4320
-    ? (scroll.style.translate = `-2px ${scrollPosition}px`)
-    : (scroll.style.translate = `-2px ${375.65}px`);
+  // scroll.style.translate = `-2px ${scrollPosition}px`;
+  // location <= 4320
+  //   ? (scroll.style.translate = `-2px ${scrollPosition}px`)
+  //   : (scroll.style.translate = `-2px ${375.65}px`);
   if (location < 880) {
     headerDetails.classList.add("headerFocus");
+    side0.classList.add("sideFocus");
   } else if (location < 1960 && location >= 880) {
     headerProj.classList.add("headerFocus");
+    side1.classList.add("sideFocus");
   } else if (location < 3040 && location >= 1960) {
     headerEdu.classList.add("headerFocus");
+    side2.classList.add("sideFocus");
   } else if (location < 4120 && location >= 3040) {
     headerContact.classList.add("headerFocus");
-  } else if (location >= 4120) console.log("end");
+    side3.classList.add("sideFocus");
+  } else if (location >= 4120) {
+    side4.classList.add("sideFocus");
+  }
 }
 
 // function sidebarSize(location) {
@@ -99,3 +113,5 @@ backdrop.addEventListener("click", function () {
   backdrop.classList.add("hidden");
   contact.classList.add("hidden");
 });
+
+//////////////////projcts/////////
