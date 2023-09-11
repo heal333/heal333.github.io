@@ -1,5 +1,5 @@
 "use strict";
-
+const body = document.querySelector("body");
 const scroll = document.querySelector(".scroll");
 const section3 = document.querySelector(".section3");
 const sidebar = document.querySelector(".sidebar");
@@ -7,7 +7,6 @@ const side0 = document.querySelector(".side0");
 const side1 = document.querySelector(".side1");
 const side2 = document.querySelector(".side2");
 const side3 = document.querySelector(".side3");
-const side4 = document.querySelector(".side4");
 // let viewHeight = window.innerHeight * 0.4;
 let scrollPosition = 0;
 const headerDetails = document.querySelector(".headerDetails");
@@ -27,7 +26,7 @@ const header = document.querySelector("header");
 
 //to render the sidebar according to the scroll position
 const headerList = [headerDetails, headerProj, headerEdu, headerContact];
-const sideList = [side0,side1,side2,side3,side4]
+const sideList = [side0,side1,side2,side3]
 function scrollEffect(location) {
   headerList.forEach((elem) => {
     elem.classList.remove("headerFocus");
@@ -52,8 +51,6 @@ function scrollEffect(location) {
   } else if (location < 4120 && location >= 3040) {
     headerContact.classList.add("headerFocus");
     side3.classList.add("sideFocus");
-  } else if (location >= 4120) {
-    side4.classList.add("sideFocus");
   }
 }
 
@@ -104,14 +101,17 @@ header.addEventListener("click", function (event) {
 hire.addEventListener("click", function () {
   backdrop.classList.remove("hidden");
   contact.classList.remove("hidden");
+  // body.classList.add("noScroll");
 });
 contactClose.addEventListener("click", function () {
   backdrop.classList.add("hidden");
   contact.classList.add("hidden");
+  body.classList.remove("noScroll");
 });
 backdrop.addEventListener("click", function () {
   backdrop.classList.add("hidden");
   contact.classList.add("hidden");
+  body.classList.remove("noScroll");
 });
 
 //////////////////projcts/////////
