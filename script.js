@@ -42,15 +42,19 @@ function scrollEffect(location) {
   if (location < 880) {
     headerDetails.classList.add("headerFocus");
     side0.classList.add("sideFocus");
+    sidebar.style.color = "black";
   } else if (location < 1960 && location >= 880) {
     headerProj.classList.add("headerFocus");
     side1.classList.add("sideFocus");
+    sidebar.style.color = "white";
   } else if (location < 3040 && location >= 1960) {
     headerEdu.classList.add("headerFocus");
     side2.classList.add("sideFocus");
-  } else if (location < 4120 && location >= 3040) {
+    sidebar.style.color = "white";
+  } else if (location >= 3040) {
     headerContact.classList.add("headerFocus");
     side3.classList.add("sideFocus");
+    sidebar.style.color = "black";
   }
 }
 
