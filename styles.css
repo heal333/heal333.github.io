@@ -134,7 +134,7 @@ header div:hover,
 } */
 .sideFocus {
   color: var(--themeColor);
-  animation: hover 0.1s;
+  animation: hover 0.3s;
   animation-fill-mode: forwards;
 }
 .sidebar div:hover {
@@ -271,47 +271,34 @@ header div:hover,
   }
   
 }
-.laptopS {
-  width: 400px;
-  translate: 0px 70px;
-  z-index: 0;
-}
-.aloveraS {
-  width: 300px;
-  translate: 10px;
-  opacity: 0.8;
-  z-index: 2;
-}
-.pencilS {
-  position: absolute;
-  height: 300px;
-  opacity: 0.5;
-  z-index: 1;
-  translate: -20px -5px;
-}
+
 
 /* proj */
 .projectPlane {
   margin: auto;
-  padding: 100px;
-  width: 800px;
   display: grid;
+  height: 800px;
+  width: 800px;
   grid-template-columns: 400px 400px;
-  grid-template-rows: 225px 225px 225px 225px;
-  height: 880px;
-
-
-  /* overflow: scroll; */
+  grid-template-rows: 200px 200px 200px 200px;
 }
 .projectPlane div{
-  height: 225px;
+  height: 200px;
   width: 400px;
+}
+.projectPlane div:hover{
+  height: 240px;
+  width: 440px;
+  translate:-20px -20px;
+  z-index: 5;
+  transition: .2s;
 }
 #blackText:hover{
   color: black;
 }
 .projectPlane div a{
   display: flex;
+  text-decoration: none;
   justify-content: center;
   align-items: center;
   color:rgba(0, 0, 0, 0);
@@ -319,18 +306,19 @@ header div:hover,
   position: absolute;
   width: inherit;
   height: inherit;
-  cursor:zoom-in
-  /* backdrop-filter: blur(.5px); */
+  cursor:zoom-in;
+  transition: .3s;
 }
 .projectPlane div a:hover{
   font-size:xx-large;
+  text-align: center;
   color: white;
   text-decoration:none;
   backdrop-filter: blur(2px);
-  transition: .5s;
 }
 .projectPlane img{
-  width:400px;
+  height: inherit;
+  width: inherit;
 }
 
 
@@ -361,8 +349,11 @@ header div:hover,
 }
 
 .links img{
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.173);
   height: 25px;
   align-items: center;
+  border-radius: 20px;
 }
 /* .links .linkicon{
   width: 40px;
