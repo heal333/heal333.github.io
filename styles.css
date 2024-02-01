@@ -42,18 +42,19 @@ body {
   z-index: 4;
 } */
 .sidebar {
-   
   color: var(--fontColor);
   translate: 5px;
-  /* padding:10px 0px 10px 0px; */
   height: inherit;
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
+  text-wrap: nowrap;
+  word-wrap:none;
   
 }
+
 .noScroll{
   overflow: hidden;
 }
@@ -287,7 +288,8 @@ header div:hover,
   height: 200px;
   width: 400px;
 }
-.projectPlane div:hover{
+.projectPlane div:hover
+{
   height: 240px;
   width: 440px;
   translate:-20px -20px;
@@ -308,7 +310,7 @@ header div:hover,
   width: inherit;
   height: inherit;
   cursor:zoom-in;
-  transition: .3s;
+  transition: .2s;
 }
 .projectPlane div a:hover{
   font-size:xx-large;
