@@ -85,6 +85,7 @@ sidebar.addEventListener("click", function (event) {
   else if (clickedOn === "side4")
     window.scrollTo({ top: 4320, behavior: "smooth" });
 });
+
 header.addEventListener("click", function (event) {
   const clickedOn = event.target.className.split(" ")[0]; // to prevent bugs when adding multiple class
   console.log(clickedOn);
@@ -107,11 +108,15 @@ hire.addEventListener("click", function () {
   contact.classList.remove("hidden");
   // body.classList.add("noScroll");
 });
+
+
 contactClose.addEventListener("click", function () {
   backdrop.classList.add("hidden");
   contact.classList.add("hidden");
   body.classList.remove("noScroll");
 });
+
+
 backdrop.addEventListener("click", function () {
   backdrop.classList.add("hidden");
   contact.classList.add("hidden");
