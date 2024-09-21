@@ -1,6 +1,9 @@
 "use strict";
 const body = document.querySelector("body");
 const scroll = document.querySelector(".scroll");
+const section0 = document.querySelector(".section0");
+const section1 = document.querySelector(".section1");
+const section2 = document.querySelector(".section2");
 const section3 = document.querySelector(".section3");
 const sidebar = document.querySelector(".sidebar");
 const side0 = document.querySelector(".side0");
@@ -18,44 +21,38 @@ const backdrop = document.querySelector(".backdrop");
 const contact = document.querySelector(".contact");
 const contactClose = document.querySelector(".contactClose");
 const header = document.querySelector("header");
+const projectPlane = document.querySelector(".projectPlane");
 const skills = document.querySelector(".skills");
-
-// window.addEventListener("resize", function () {
-//   viewHeight = window.innerHeight * 0.4;
-//   console.log('resized')
-// });
+const offset = 300;
 
 //to render the sidebar according to the scroll position
 const headerList = [headerDetails, headerProj, headerEdu, headerContact];
 const sideList = [side0, side1, side2, side3];
+
 function scrollEffect(location) {
+    const h0 = section0.clientHeight;
+    const h1 = section1.clientHeight;
+    const h2 = section2.clientHeight;
+    // const h3 = section3.clientHeight;
+    // console.log(h0);
     headerList.forEach((elem) => {
         elem.classList.remove("headerFocus");
     });
     sideList.forEach((elem) => {
         elem.classList.remove("sideFocus");
     });
-    scrollPosition = location / 11.5; //(window.scrollY / 3500) * 400;
-    // scroll.style.translate = `-2px ${scrollPosition}px`;
-    // location <= 4320
-    //   ? (scroll.style.translate = `-2px ${scrollPosition}px`)
-    //   : (scroll.style.translate = `-2px ${375.65}px`);
-    if (location < 880) {
+    if (location < h0 - 300) {
         headerDetails.classList.add("headerFocus");
         side0.classList.add("sideFocus");
-        // sidebar.style.color = "black";
-    } else if (location < 1960 && location >= 880) {
+    } else if (location < h0 + h1 - offset) {
         headerProj.classList.add("headerFocus");
         side1.classList.add("sideFocus");
-        // sidebar.style.color = "white";
-    } else if (location < 3040 && location >= 1960) {
+    } else if (location < h0 + h1 + h2 - offset - 500) {
         headerEdu.classList.add("headerFocus");
         side2.classList.add("sideFocus");
-        // sidebar.style.color = "white";
-    } else if (location >= 3040) {
+    } else {
         headerContact.classList.add("headerFocus");
         side3.classList.add("sideFocus");
-        // sidebar.style.color = "black";
     }
 }
 
@@ -76,38 +73,30 @@ window.addEventListener("scroll", () => {
 //using event bubbling
 sidebar.addEventListener("click", function (event) {
     const clickedOn = event.target.className.split(" ")[0]; //to get only the first class
-    if (clickedOn === "side0") window.scrollTo({ top: 0, behavior: "smooth" });
-    else if (clickedOn === "side1")
-        window.scrollTo({ top: 1080, behavior: "smooth" });
-    else if (clickedOn === "side2")
-        window.scrollTo({ top: 2160, behavior: "smooth" });
-    else if (clickedOn === "side3")
-        window.scrollTo({ top: 3240, behavior: "smooth" });
-    else if (clickedOn === "side4")
-        window.scrollTo({ top: 4320, behavior: "smooth" });
+    if (clickedOn === "side0") section0.scrollIntoView();
+    else if (clickedOn === "side1") section1.scrollIntoView();
+    else if (clickedOn === "side2") section2.scrollIntoView();
+    else if (clickedOn === "side3") section3.scrollIntoView();
 });
 
 header.addEventListener("click", function (event) {
     const clickedOn = event.target.className.split(" ")[0]; // to prevent bugs when adding multiple class
     console.log(clickedOn);
-    if (clickedOn === "headerDetails")
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    else if (clickedOn === "headerProj")
-        window.scrollTo({ top: 1080, behavior: "smooth" });
-    else if (clickedOn === "headerEdu")
-        window.scrollTo({ top: 2160, behavior: "smooth" });
-    else if (clickedOn === "headerContact")
-        window.scrollTo({ top: 3240, behavior: "smooth" });
+    if (clickedOn === "headerDetails") section0.scrollIntoView();
+    else if (clickedOn === "headerProj") section1.scrollIntoView();
+    else if (clickedOn === "headerEdu") section2.scrollIntoView();
+    else if (clickedOn === "headerContact") section3.scrollIntoView();
     else if (clickedOn === "hire") {
         backdrop.classList.remove("hidden");
         contact.classList.remove("hidden");
     }
 });
 
+////hire modal
 hire.addEventListener("click", function () {
     backdrop.classList.remove("hidden");
     contact.classList.remove("hidden");
-    // body.classList.add("noScroll");
+    body.classList.add("noScroll");
 });
 
 contactClose.addEventListener("click", function () {
@@ -122,8 +111,66 @@ backdrop.addEventListener("click", function () {
     body.classList.remove("noScroll");
 });
 
-//////////////////projcts/////////
+////projects
+const projectList = [
+    {
+        name: "foodie",
+        pic: "./plugs/foodie.png",
+        link: "https://heal333.github.io/foodie/",
+        desc: "",
+        id: "blackText",
+    },
+    {
+        name: "type0",
+        pic: "./plugs/type0.png",
+        link: "https://heal333.github.io/foodie/",
+        desc: "",
+    },
+    {
+        name: "crypto Coins",
+        pic: "./plugs/cryptoCoins.png",
+        link: "https://heal333.github.io/cryptoCoins/",
+        desc: "",
+    },
+    {
+        name: "expanseMap",
+        pic: "./plugs/expanseMap.jpg",
+        link: "https://heal333.github.io/expanseMap/",
+        desc: "",
+    },
+    {
+        name: "recursion",
+        pic: "./plugs/recursion.jpg",
+        link: "https://heal333.github.io/",
+        desc: "",
+        id: "blackText",
+    },
+    {
+        name: "easyBank",
+        pic: "./plugs/easyBank.png",
+        link: "https://heal333.github.io/easyBank/",
+        desc: "",
+        id: "blackText",
+    },
+];
 
+projectList.forEach((obj) => {
+    const baseNode = document.createElement("div");
+    const anchorNode = document.createElement("a");
+    anchorNode.setAttribute("href", obj.link);
+    anchorNode.setAttribute("target", "_blank");
+    anchorNode.innerText = obj.name;
+    obj.id && anchorNode.setAttribute("id", obj.id);
+
+    const imgNode = document.createElement("img");
+    imgNode.setAttribute("src", obj.pic);
+
+    baseNode.appendChild(anchorNode);
+    baseNode.appendChild(imgNode);
+    projectPlane.appendChild(baseNode);
+});
+
+//// skills
 const skillList = [
     "React JS",
     "JavaScript",
@@ -135,7 +182,7 @@ const skillList = [
     "CSS",
 ];
 skillList.forEach((skill) => {
-  const node = document.createElement("div");
-  node.innerText=skill;
+    const node = document.createElement("div");
+    node.innerText = skill;
     skills.appendChild(node);
 });
