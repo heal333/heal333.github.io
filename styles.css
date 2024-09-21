@@ -34,7 +34,7 @@ body {
 }
 
 header div {
-    padding: 1rem;
+    padding: 0.7rem;
     margin: auto 0;
 }
 
@@ -81,13 +81,13 @@ header div:hover,
 .hrLine {
     position: fixed;
     height: 2px;
-    width: 100vw;
+    width: 100%;
     background-image: linear-gradient(to left, var(--themeColor), blue);
     z-index: 20;
 }
 .vrLine {
     position: fixed;
-    height: 100vh;
+    height: 100%;
     width: 2px;
     background-image: linear-gradient(to top, var(--themeColor), blue);
     z-index: 20;
