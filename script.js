@@ -172,14 +172,19 @@ projectList.forEach((obj) => {
 
 //// skills
 const skillList = [
-    "React JS",
     "JavaScript",
     "python",
+    "C++",
+    "React.js",
+    "Node.js",
+    "Express.js",
+    "mongoDB",
     "mySql",
-    "git",
-    "Github",
+    "Tailwind CSS",
     "HTML",
     "CSS",
+    "git",
+    "Github",
 ];
 skillList.forEach((skill) => {
     const node = document.createElement("div");
