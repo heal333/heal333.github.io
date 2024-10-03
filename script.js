@@ -123,7 +123,7 @@ const projectList = [
     {
         name: "type0",
         pic: "./plugs/type0.png",
-        link: "https://heal333.github.io/foodie/",
+        link: "https://heal333.github.io/type0/",
         desc: "",
     },
     {

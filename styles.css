@@ -1,6 +1,4 @@
 * {
-    /* font-family: monospace;
-    font-size: large; */
     --themeColor: rgb(227, 32, 100);
     --fontColor: white;
     scroll-behavior: smooth;
@@ -9,10 +7,11 @@
         Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
         sans-serif; */
     font-family: monospace;
+    font-size: 1.1rem;
 }
 
 *:not(:hover) {
-    transition: translate, color, 200ms;
+    transition: color, 200ms;
 }
 header {
     position: fixed;
@@ -23,7 +22,7 @@ header {
     color: var(--fontColor);
     backdrop-filter: blur(2px);
     background-image: linear-gradient(to bottom, black, rgba(255, 255, 255, 0));
-    z-index: 10;
+    z-index: 15;
 }
 
 body {
@@ -31,7 +30,7 @@ body {
     padding: 0;
     font-size: 1.1rem;
     overflow-x: hidden;
-    background-repeat: repeat;
+    /* background-repeat: repeat; */
 }
 
 header div {
@@ -73,7 +72,7 @@ header div:hover,
 
 .background {
     position: fixed;
-    height: 100%;
+    height: 100lvh;
     width: 100%;
     z-index: -1;
     object-fit: cover;
@@ -118,14 +117,14 @@ header div:hover,
     cursor: pointer;
 }
 .side0 {
-    padding-bottom: 0.7rem;
+    padding-bottom: 10px;
 }
 .side1,
 .side2 {
-    padding: 0.7rem 0rem;
+    padding: 5px 0rem;
 }
 .side3 {
-    padding-top: 0.7rem;
+    padding-top: 10px;
 }
 .sidebar div:hover {
     color: var(--themeColor);
@@ -164,24 +163,13 @@ header div:hover,
 .section2 {
     background-image: url("./plugs/part2.png");
     background-size: cover;
+    backdrop-filter: blur(16px);
 }
 .section3 {
     background-image: url("./plugs/part3.png");
-    backdrop-filter: blur(1rem);
-
+    backdrop-filter: blur(16px);
     background-size: cover;
 }
-/* .section0 img,
-.section1 img,
-.section2 img,
-.section3 img {
-    height: 100%;
-    object-fit: cover;
-} */
-
-/* .section3 {
-  background-color: azure;
-} */
 
 .hidden {
     display: none;
@@ -189,11 +177,11 @@ header div:hover,
 .backdrop {
     position: fixed;
     top: 0;
-    height: 100%;
+    height: 100lvh;
     width: 100vw;
     background-color: rgba(57, 57, 58, 0.409);
     backdrop-filter: blur(5px);
-    z-index: 7;
+    z-index: 10;
 }
 
 .contact {
@@ -209,7 +197,7 @@ header div:hover,
     right: 0;
     box-shadow: 5px 5px 5px rgb(43, 42, 42);
     border-radius: 15px;
-    z-index: 10;
+    z-index: 11;
     padding-top: 100px;
 }
 .contactClose {
@@ -292,49 +280,50 @@ header div:hover,
 
 /* project */
 
-.section1 {
-    padding-bottom: 5rem;
-}
 .projectPlane {
     margin: auto auto;
     padding: 10rem 0;
     display: grid;
-    width: fit-content;
-    grid-template-columns: 40rem 40rem;
-    /* grid-template-rows: 22rem; */
+    width: 60%;
+    grid-template-columns: 50% 50%;
 }
-.projectPlane * {
-    height: 100%;
+/* .projectPlane div {
+    border: 1px solid white;
+} */
+.projectPlane img {
     width: 100%;
-    object-fit: fill;
-    cursor: zoom-in;
-    display: flex;
-    text-decoration: none;
-    justify-content: center;
-    align-items: center;
-    color: rgba(0, 0, 0, 0);
-    border-radius: 7px;
+    height: inherit;
+    border-radius: 3px;
 }
 
 .projectPlane a {
     position: absolute;
-    width: 40rem;
-    height: 22rem;
-}
-.projectPlane *:hover {
-    transform: scale(1.2);
-    font-size: 1.7rem;
-    color: white;
-    backdrop-filter: blur(2px);
-    transition: width, font-size, backdrop-filter, color, 200ms;
-    z-index: 5;
-}
-#blackText:hover {
-    color: black;
+    top: 0%;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-size: 0rem;
+    text-decoration: none;
+    color: var(--themeColor);
+    z-index: 1;
 }
 
+.projectPlane div:hover {
+    transform: scale(1.2);
+    color: white;
+    transition: font-size, backdrop-filter, color, 200ms;
+}
+.projectPlane a:hover {
+    backdrop-filter: blur(2px);
+    font-size: 2rem;
+    transition: all 200ms;
+}
+/* #blackText:hover {
+    color: black;
+} */
+
 .skills {
-    /* padding-top: 400px; */
+    padding-top: 7rem;
     width: 80%;
     margin: auto auto;
     display: flex;
@@ -342,24 +331,17 @@ header div:hover,
     flex-wrap: wrap;
 }
 .skills div {
-    color: rgb(0, 0, 0);
-    margin: 2rem;
-    text-align: center;
-    background-image: linear-gradient(
-        to right,
-        var(--fontColor),
-        rgb(0, 217, 255)
-    );
-    padding: 1rem 1rem;
+    color: var(--themeColor);
+    padding: 1rem 2rem;
     border: 1px solid rgba(255, 255, 255, 0.619);
-    width: 7rem;
-    height: 1.5rem;
+    margin: 1rem;
     cursor: default;
+    transition: border, color, 200ms;
 }
 .skills div:hover {
-    box-shadow: 10px 10px rgba(255, 255, 255, 0.44);
     border: 1px solid white;
-    transition: all 0.2s;
+    background-color: var(--themeColor);
+    color: white;
 }
 
 .section3 {
@@ -384,17 +366,8 @@ header div:hover,
     html {
         font-size: 1.7rem;
     }
-    .section0,
-    .section1,
-    .section2,
-    .section3 {
-        min-height: 1500px;
-    }
     .projectPlane {
-        grid-template-columns: 25rem;
-    }
-    .projectPlane a {
-        width: 25rem;
-        height: 12rem;
+        width: 60%;
+        grid-template-columns: 100%;
     }
 }
