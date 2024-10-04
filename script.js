@@ -117,40 +117,37 @@ const projectList = [
         name: "foodie",
         pic: "./plugs/foodie.png",
         link: "https://heal333.github.io/foodie/",
-        desc: "",
-        id: "blackText",
+        desc: "A full stack web app for orderig food",
     },
     {
         name: "type0",
         pic: "./plugs/type0.png",
         link: "https://heal333.github.io/type0/",
-        desc: "",
+        desc: "a typing website for relaxation.",
     },
     {
         name: "crypto Coins",
         pic: "./plugs/cryptoCoins.png",
         link: "https://heal333.github.io/cryptoCoins/",
-        desc: "",
+        desc: "A responsive webapp listing various crypto currencies and crypto currency converter.",
     },
     {
         name: "expanseMap",
         pic: "./plugs/expanseMap.jpg",
         link: "https://heal333.github.io/expanseMap/",
-        desc: "",
+        desc: "A react app for keeping track of your daily expenses",
     },
     {
         name: "recursion",
         pic: "./plugs/recursion.jpg",
         link: "https://heal333.github.io/",
-        desc: "",
-        id: "blackText",
+        desc: "a porfolio website using vanila js",
     },
     {
         name: "easyBank",
         pic: "./plugs/easyBank.png",
         link: "https://heal333.github.io/easyBank/",
-        desc: "",
-        id: "blackText",
+        desc: "Interface for a banking website",
     },
 ];
 
@@ -159,8 +156,13 @@ projectList.forEach((obj) => {
     const anchorNode = document.createElement("a");
     anchorNode.setAttribute("href", obj.link);
     anchorNode.setAttribute("target", "_blank");
-    anchorNode.innerText = obj.name;
-    obj.id && anchorNode.setAttribute("id", obj.id);
+    // anchorNode.innerText = obj.name;
+    const header = document.createElement("h1");
+    header.innerText = obj.name;
+    const desc = document.createElement("span");
+    desc.innerText = obj.desc;
+    anchorNode.appendChild(desc);
+    anchorNode.appendChild(header);
 
     const imgNode = document.createElement("img");
     imgNode.setAttribute("src", obj.pic);

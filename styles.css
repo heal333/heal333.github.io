@@ -44,7 +44,7 @@ header div:hover,
     cursor: default;
     border: none;
     translate: 0px -5px;
-    transition: ease-out 0.1s;
+    /* transition: ease-out 0.1s; */
     /* text-transform: capitalize; */
     text-decoration: underline;
     text-underline-offset: 10px;
@@ -72,11 +72,11 @@ header div:hover,
 
 .background {
     position: fixed;
+
+    width: 100vw;
     height: 100lvh;
-    width: 100%;
-    z-index: -1;
     object-fit: cover;
-    background-repeat: repeat-y;
+    z-index: -1;
 }
 .hrLine {
     position: fixed;
@@ -130,7 +130,7 @@ header div:hover,
     color: var(--themeColor);
     /* transform: scale(1.2); */
     translate: 1rem;
-    transition: 0.1s;
+    /* transition: 0.1s; */
 }
 .sideFocus {
     color: var(--themeColor);
@@ -285,42 +285,62 @@ header div:hover,
     padding: 10rem 0;
     display: grid;
     width: 60%;
+    gap: -1rem;
     grid-template-columns: 50% 50%;
 }
-/* .projectPlane div {
-    border: 1px solid white;
-} */
+.projectPlane div {
+    position: relative;
+    rotate: 180deg;
+}
+
+.projectPlane a * {
+    rotate: 180deg;
+}
 .projectPlane img {
     width: 100%;
-    height: inherit;
+    height: 100%;
+    rotate: 180deg;
     border-radius: 3px;
 }
 
 .projectPlane a {
     position: absolute;
-    top: 0%;
     text-align: center;
+    font-size: 2rem;
     width: 100%;
-    height: 100%;
-    font-size: 0rem;
+    height: 0;
+    overflow: hidden;
+    background-color: var(--themeColor);
     text-decoration: none;
-    color: var(--themeColor);
+    color: white;
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     z-index: 1;
+}
+.projectPlane a h1 {
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+.projectPlane a span {
+    color: black;
 }
 
 .projectPlane div:hover {
-    transform: scale(1.2);
-    color: white;
+    a {
+        /* width: 100%; */
+        height: 100%;
+        font-size: 2rem;
+        transition: all 200ms;
+    }
     transition: font-size, backdrop-filter, color, 200ms;
 }
-.projectPlane a:hover {
-    backdrop-filter: blur(2px);
-    font-size: 2rem;
-    transition: all 200ms;
+.projectPlane div:not(:hover) {
+    a {
+        transition: 1s ease-out;
+    }
 }
-/* #blackText:hover {
-    color: black;
-} */
 
 .skills {
     padding-top: 7rem;
@@ -333,13 +353,13 @@ header div:hover,
 .skills div {
     color: var(--themeColor);
     padding: 1rem 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.619);
+    border: 0.1rem solid rgba(255, 255, 255, 0.619);
     margin: 1rem;
     cursor: default;
     transition: border, color, 200ms;
 }
 .skills div:hover {
-    border: 1px solid white;
+    border-color: white;
     background-color: var(--themeColor);
     color: white;
 }
